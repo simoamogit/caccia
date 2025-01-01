@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caccia al Tesoro - Finale</title>
+</head>
+<body>
+  <h1>Indovinello Finale</h1>
+  <p>Tra i vestiti che Simone indossa ogni giorno, c'è un mobile che custodisce il suo mondo. Apri un cassetto, ma ricorda una cosa: porta il telefono per svelare la sorpresa!</p>
+
+  <form id="answerForm4">
+    <input type="text" id="answer4" name="answer4" required>
+    <button type="submit">Invia Risposta</button>
+  </form>
+  <p id="feedback4"></p>
+
+  <div id="next-step4" style="display:none;">
+    <p><a href="#regalo">Vai al luogo del regalo!</a></p>
+  </div>
+
+  <script>
+    document.getElementById("answerForm4").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let answer4 = document.getElementById("answer4").value.toLowerCase();
+      if (answer4 === "cassetto") {
+        document.getElementById("feedback4").textContent = "Risposta corretta! Vai al luogo del regalo!";
+        document.getElementById("next-step4").style.display = "block";
+      } else {
+        document.getElementById("feedback4").textContent = "Risposta sbagliata! Riprova.";
+      }
+    });
+  </script>
+
+  <div id="regalo" style="display:none;">
+    <h2>Complimenti! Hai trovato il regalo!</h2>
+    <p>Un posto nascosto, dove riposano le scarpe, ogni paio pronto a partire per mille avventure, cerca bene, ma non fermarti lì, il vero regalo si trova lì, fidati di me!</p>
+    <p><strong>Auguri di buon compleanno!</strong></p>
+  </div>
+</body>
+</html>
