@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caccia al Tesoro - Terzo Indovinello</title>
+</head>
+<body>
+  <h1>Indovinello 3</h1>
+  <p>Un posto dove il motore ruggisce, dove attrezzi e ruote regnano sovrani, tra scatole e oggetti un po' polverosi, troverai qualcosa!</p>
+
+  <form id="answerForm3">
+    <input type="text" id="answer3" name="answer3" required>
+    <button type="submit">Invia Risposta</button>
+  </form>
+  <p id="feedback3"></p>
+
+  <div id="next-step3" style="display:none;">
+    <p><a href="step4.html">Vai al prossimo indizio</a></p>
+  </div>
+
+  <script>
+    document.getElementById("answerForm3").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let answer3 = document.getElementById("answer3").value.toLowerCase();
+      if (answer3 === "garage") {
+        document.getElementById("feedback3").textContent = "Risposta corretta! Vai al prossimo indizio!";
+        document.getElementById("next-step3").style.display = "block";
+      } else {
+        document.getElementById("feedback3").textContent = "Risposta sbagliata! Riprova.";
+      }
+    });
+  </script>
+</body>
+</html>
