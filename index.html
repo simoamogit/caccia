@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caccia al Tesoro - Inizio</title>
+</head>
+<body>
+  <h1>Benvenuto nella MITICA, FOLLE, INCREDIBILE caccia al tesoro interattiva!</h1>
+  <p>Comincia la tua avventura per trovare il regalo di compleanno!</p>
+  <p>Per iniziare, cerca il telefono di tua nonna!</p>
+
+  <h2>Indovinello 1:</h2>
+  <p>Ogni mattina sono pronto a darti energia, ti faccio iniziare la giornata con un bel sorriso, con la mia aroma che riempie la casa, a me basta solo un po' di acqua calda e delle cialde. Chi sono?</p>
+
+  <form id="answerForm">
+    <input type="text" id="answer" name="answer" required>
+    <button type="submit">Invia Risposta</button>
+  </form>
+  <p id="feedback"></p>
+
+  <div id="next-step" style="display:none;">
+    <p><a href="step2.html">Vai al prossimo indizio</a></p>
+  </div>
+
+  <script>
+    document.getElementById("answerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      let answer = document.getElementById("answer").value.toLowerCase();
+      if (answer === "macchina del caffè") {
+        document.getElementById("feedback").textContent = "Risposta corretta! Vai al prossimo indizio!";
+        document.getElementById("next-step").style.display = "block";
+      } else {
+        document.getElementById("feedback").textContent = "Risposta sbagliata! Riprova.";
+      }
+    });
+  </script>
+</body>
+</html>
